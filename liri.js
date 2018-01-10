@@ -18,10 +18,10 @@ var Twitter = require('twitter');
 //var client = new Twitter(keys.twitter);
 function dylantweets(){
 	var client = new Twitter({
-  	consumer_key: keys.twitterKeys.consumer_key,
-  	consumer_secret: keys.twitterKeys.consumer_secret,
-  	access_token_key: keys.twitterKeys.access_token_key,
-  	access_token_secret: keys.twitterKeys.access_token_secret,
+  	consumer_key: TWITTER_CONSUMER_KEY,
+  	consumer_secret: TWITTER_CONSUMER_SECRET,
+  	access_token_key: TWITTER_ACCESS_TOKEN_KEY,
+  	access_token_secret: TWITTER_ACCESS_TOKEN_SECRET,
   	});
  
 	var params = {oneilltest216: 'nodejs'};
@@ -36,7 +36,7 @@ function dylanspithotfire(){
  
 	var spotify = new Spotify({
   	id: SPOTIFY_ID,
-  	secret: SPOTIFY_SECRET, //the <input> thing is confusing here, isn't the point of the .env file to hide id/secret?
+  	secret: SPOTIFY_SECRET, //should I be trying to correlate these to my keys.js file or be directly inputting the keys themselves into this file?
 	});
  
 	spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
@@ -46,4 +46,20 @@ function dylanspithotfire(){
  
 console.log(data); 
 });
+}
+
+function dylanlikesmovies(){
+
+		var url = 'http://www.omdbapi.com/?t=' + searchMovie +'&y=&plot=long&tomatoes=true&r=json';
+   	request(url, function(error, response, body){
+	    if(!error && response.statusCode == 200){
+	        console.log("Title: " + JSON.parse(body)["Title"]);
+	        console.log("Year: " + JSON.parse(body)["Year"]);
+	        console.log("IMDB Rating: " + JSON.parse(body)["imdbRating"]);
+	        console.log("Country: " + JSON.parse(body)["Country"]);
+	        console.log("Language: " + JSON.parse(body)["Language"]);
+	        console.log("Plot: " + JSON.parse(body)["Plot"]);
+	        console.log("Actors: " + JSON.parse(body)["Actors"]);
+	        console.log("Rotten Tomatoes Rating: " + JSON.parse(body)["tomatoRating"]);
+	        console.log("Rotten Tomatoes URL: " + JSON.parse(body)["tomatoURL"]);
 }
