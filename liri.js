@@ -19,6 +19,7 @@ var Twitter = require('twitter');
   
 //var client = new Twitter(keys.twitter);
 function dylantweets(){
+	//process.argv
 	var client = new Twitter({
   	consumer_key: TWITTER_CONSUMER_KEY,
   	consumer_secret: TWITTER_CONSUMER_SECRET,
@@ -38,7 +39,7 @@ function dylanspithotfire(){
  
 	var spotify = new Spotify({
   	id: SPOTIFY_ID,
-  	secret: SPOTIFY_SECRET, //should I be trying to correlate these to my keys.js file or be directly inputting the keys themselves into this file?
+  	secret: SPOTIFY_SECRET, //struggled getting these to correlate with appropriate keys in process.env file
 	});
  
 	spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
