@@ -7,9 +7,11 @@ var request = require('request');
 
 require("dotenv").config();
 
+var keys = require('keys.js');
+
+
 var fs = require('fs');
 
-var keys = require('keys.js');
 
 var Twitter = require('twitter');
 
@@ -29,7 +31,7 @@ function dylantweets(){
   	if (!error) {
     	console.log(tweets);
   	}
-	});
+});
 
 function dylanspithotfire(){
 	var Spotify = require('node-spotify-api');
@@ -44,13 +46,13 @@ function dylanspithotfire(){
     return console.log('Error occurred: ' + err);
   }
  
-console.log(data); 
+	console.log(data); 
 });
 }
 
 function dylanlikesmovies(){
-
-		var url = 'http://www.omdbapi.com/?t=' + searchMovie +'&y=&plot=long&tomatoes=true&r=json';
+	var findmovie
+	var url = 'http://www.omdbapi.com/?t=' + findmovie +'&y=&plot=long&tomatoes=true&r=json';
    	request(url, function(error, response, body){
 	    if(!error && response.statusCode == 200){
 	        console.log("Title: " + JSON.parse(body)["Title"]);
@@ -62,4 +64,4 @@ function dylanlikesmovies(){
 	        console.log("Actors: " + JSON.parse(body)["Actors"]);
 	        console.log("Rotten Tomatoes Rating: " + JSON.parse(body)["tomatoRating"]);
 	        console.log("Rotten Tomatoes URL: " + JSON.parse(body)["tomatoURL"]);
-}
+};
