@@ -51,7 +51,7 @@ function dylanspithotfire(){
 }
 
 function dylanlikesmovies(){
-	var findmovie
+	var findmovie;
 	var url = 'http://www.omdbapi.com/?t=' + findmovie +'&y=&plot=long&tomatoes=true&r=json';
    	request(url, function(error, response, body){
 	    if(!error && response.statusCode == 200){
