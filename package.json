@@ -1,0 +1,15 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Homework8",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dylan O'Neill",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "Homework8"
+  }
+}
