@@ -15,6 +15,8 @@ var fs = require('fs');
 
 var Twitter = require('twitter');
 
+var Spotify = require('node-spotify-api');
+
 //var spotify = new Spotify(keys.spotify);
   
 //var client = new Twitter(keys.twitter);
@@ -35,7 +37,6 @@ function dylantweets(){
 });
 
 function dylanspithotfire(){
-	var Spotify = require('node-spotify-api');
  
 	var spotify = new Spotify({
   	id: SPOTIFY_ID,
@@ -52,7 +53,9 @@ function dylanspithotfire(){
 }
 
 function dylanlikesmovies(){
+	
 	var findmovie;
+	
 	var url = 'http://www.omdbapi.com/?t=' + findmovie +'&y=&plot=long&tomatoes=true&r=json';
    	request(url, function(error, response, body){
 	    if(!error && response.statusCode == 200){
